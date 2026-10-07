@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>GTA 67</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/icon.png"><link rel="apple-touch-icon" href="assets/icon.png"></head><body>
+<canvas id="c"></canvas>
+
+<div id="hud" class="hid">
+ <div id="st"><div id="mny">$500</div><div id="hpb"><i id="hp"></i></div><div id="stars"></div><div id="wn"></div></div>
+ <canvas id="mm" width="130" height="130"></canvas>
+ <div id="ms"></div><button id="rd">RADYO</button><div id="ww" class="hid"></div><button id="hub">☰</button><div id="hubp" class="hid"><button id="hCmd">CMD</button><button id="hRad">RADYO</button><button id="hTel">TELEFON</button><button id="hCnt">NPC / ARAÇ</button></div><div id="tm"></div><div id="dash" class="hid"><svg viewBox="0 0 200 125"><path d="M20 105A80 80 0 0 1 180 105" fill="none" stroke="#ffffff30" stroke-width="12" stroke-linecap="round"/><path id="darc" d="M20 105A80 80 0 0 1 180 105" fill="none" stroke="#ff2fa8" stroke-width="12" stroke-linecap="round" stroke-dasharray="0 400"/><g id="dtk" stroke="#fff" stroke-width="2"></g><line id="dn" x1="100" y1="105" x2="100" y2="40" stroke="#ffd23c" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="105" r="7" fill="#111" stroke="#fff" stroke-width="2"/><text id="dk" x="100" y="80" text-anchor="middle" font-family="Bungee,Impact,sans-serif" font-size="30" fill="#fff">0</text><text x="100" y="94" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="12" font-weight="700" fill="#cfc8ff">km/h</text><text id="dg" x="178" y="122" text-anchor="end" font-family="Bungee,Impact,sans-serif" font-size="16" fill="#ffd23c">N</text><rect x="20" y="114" width="80" height="6" rx="3" fill="#ffffff30"/><rect id="dh" x="20" y="114" width="80" height="6" rx="3" fill="#3f6"/></svg></div><button id="pz">MENÜ</button><button id="cv">KAMERA</button><button id="cb">CMD</button><div id="msg"></div>
+</div>
+<div id="ctl" class="hid">
+ <div id="joy"><i id="kn"></i></div>
+ <div id="drv" class="hid"><div id="wheel"></div><div id="pedals"><button id="pBrk">FREN</button><button id="pGas">GAZ</button></div></div>
+ <div id="bt"><button id="bFire">ATEŞ</button><button id="bAct">ARAÇ</button><button id="bRun">KOŞ</button><button id="bWep">SİLAH</button></div>
+</div>
+<div id="wst" class="hid">WASTED</div>
+<div id="cmd" class="ov hid"><div id="clog"></div><div id="cchips"></div><input id="cin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="/help"><button class="mb" id="cx">KAPAT</button></div>
+<div id="shop" class="ov hid"><h2 id="stt"></h2><div id="smn"></div><div id="sit"></div><div id="sinf"></div><button class="mb" id="sx">ÇIK</button></div>
+<div id="cnt" class="ov hid"><h2>NPC / ARAÇ</h2><div class="sl"><label id="lNpc2"></label><input type="range" id="sNpc2" min="0" max="250" step="1"></div><div class="sl"><label id="lCar2"></label><input type="range" id="sCar2" min="0" max="275" step="1"></div><button class="mb" id="cx2">KAPAT</button></div>
+<div id="rot"><i></i>Telefonu yatay çevir</div>
+
+<div id="fm" class="ov hid"><h2>Harita</h2><canvas id="fc"></canvas><button class="mb" id="fx">✕ X</button><button class="mb" id="fmn" aria-label="Yerler">▼</button><div id="fl" class="hid"><div id="fli"></div></div><button class="mb" id="fzp" aria-label="Yakınlaştır">+</button><button class="mb" id="fzm" aria-label="Uzaklaştır">&minus;</button></div>
+<div id="menu" class="ov">
+ <div class="logo">GTA<b>67</b></div>
+ <div class="col"><button class="mb" id="bPlay">ÇEVRİMDIŞI BAŞLA</button>
+ <button class="mb" id="bOnl">ÇEVRİMİÇİ OYNA</button>
+ <button class="mb" id="bSet">AYARLAR</button>
+ <button class="mb" id="bMod">MODLAR</button></div>
+</div>
+<div id="set" class="ov hid"><h2>Ayarlar</h2>
+ <button class="mb" id="oSnd"></button><button class="mb" id="oRain"></button><button class="mb" id="oDay"></button><button class="mb" id="oGfx"></button><button class="mb" id="oAuto"></button>
+ <div class="sl"><label id="lNpc"></label><input type="range" id="sNpc" min="0" max="250" step="1"></div><div class="sl"><label id="lCar"></label><input type="range" id="sCar" min="0" max="275" step="1"></div>
+ <button class="mb" data-back>GERİ</button></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<div id="ph" class="ov hid"><button id="px" aria-label="Kapat"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+<div id="pfr"><div id="psb"><b id="pclk">13:24</b><span id="pcam"></span><span class="pri"><span class="sig"><i></i><i></i><i></i><i></i></span><span class="bat"><i></i></span></span></div>
+<div id="pbody"><div id="phs"><div id="pwd"><b id="pwt">13:24</b><span>GTA 67</span></div><div id="pgrid"></div></div>
+<div id="pap" class="hid"><div id="paph"><button id="pbk" aria-label="Geri"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><span id="pat"></span></div><div id="pac"></div></div></div>
+<button id="phm" aria-label="Ana ekran"></button></div></div>
+<div id="phf" class="hid"></div>
+<div id="acc" class="ov hid"><h2>HESAP</h2><input id="au" placeholder="Username"><input id="ap" type="password" placeholder="Şifre"><div id="am"></div><button id="aReg" class="mb">KAYIT OL</button><button id="aLog" class="mb">GİR</button><button id="aBack" class="mb">GERİ</button></div>
+<div id="rmx" class="ov hid"><h2 id="rt">ÇEVRİMİÇİ</h2>
+<div id="rs1" class="rsc"><button id="rGoMk" class="mb">ODA OLUŞTUR</button><button id="rGoJn" class="mb">ODA GİR</button><button id="rLs" class="mb">AÇIK ODALAR</button></div>
+<div id="rs2" class="rsc hid"><input id="rn" placeholder="Oda adı" maxlength="24"><input id="rp" placeholder="Oda şifresi (boş bırakabilirsin)" maxlength="32"><div class="sl"><label id="lRN"></label><input type="range" id="sRN" min="0" max="250" step="1" value="45"></div><div class="sl"><label id="lRC"></label><input type="range" id="sRC" min="0" max="275" step="1" value="44"></div><label id="rpl"><input type="checkbox" id="rpub" checked> Açık odalar listesinde görünsün</label><button id="rMk" class="mb">OLUŞTUR</button></div>
+<div id="rs3" class="rsc hid"><input id="rj" placeholder="7 haneli oda kodu" inputmode="numeric" maxlength="7"><input id="rjp" placeholder="Oda şifresi (varsa)" maxlength="32"><button id="rJn" class="mb">GİR</button></div>
+<div id="rc"></div><div id="rl"></div><button id="rOff" class="mb">ÇEVRİMDIŞI OYNA</button><button id="rBack" class="mb">GERİ</button></div><div id="cht" class="ov hid"><div id="chl"></div><input id="chi" placeholder="Mesaj yaz..." autocomplete="off"><button id="chs" class="mb">GÖNDER</button><button id="chx" class="mb">ÇIK</button></div>
+<script src="js/models.js"></script>
+<script src="js/extra.js"></script>
+<script src="js/traffic.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="js/city-fallback.js"></script>
+<script src="js/game.js"></script>
+<script src="js/online2.js"></script>
+<script src="js/v6.js"></script>
+<script src="js/weapons7.js"></script>
+<script src="js/v7.js"></script>
+<script src="js/v8.js"></script>
+<script src="js/v9.js"></script>
+<script src="js/v10.js"></script>
+<script src="js/v11.js"></script>
+<script src="js/v12.js"></script>
+</body></html>
